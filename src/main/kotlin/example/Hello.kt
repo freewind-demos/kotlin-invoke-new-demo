@@ -1,8 +1,11 @@
 package example
 
-@JsName("hello")
-external fun hello(name: String): String
+@JsName("Hello")
+external class Hello(name: String) {
+    fun hello(): Unit = definedExternally
+}
 
 fun main(args: Array<String>) {
-    console.log(hello("Kotlin JS"))
+    val hello = Hello("Kotlin JS")
+    console.log(hello.hello())
 }
